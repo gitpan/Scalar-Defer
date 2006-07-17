@@ -1,0 +1,43 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.54.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 9100b930571b16bb4e3b17cff67c31ff6a7f9c17 Changes
+SHA1 09e3fcf00c634c9f12cab95acad3058804f2f39e MANIFEST
+SHA1 41c58313de0c5d5d200d4d0f9bc956d5b2a42d87 META.yml
+SHA1 59dfb84e8e5c9d04c1cb56bf1d5128803c37a823 Makefile.PL
+SHA1 5379e2ddd954a176f3c569265dfd50ab40880508 README
+SHA1 017bedfcba1e0c72b36301e6ef21b8712b84d175 inc/Module/Install.pm
+SHA1 b1a70869c098ba602151631386fc510b5bfd3511 inc/Module/Install/Base.pm
+SHA1 dd7313db23119d49ae78593bfa576554fb5b0fd8 inc/Module/Install/Can.pm
+SHA1 7c3a5153a5574556d895f23e121a41e680da11c1 inc/Module/Install/Fetch.pm
+SHA1 2e9c012e58c778a4a83c5eaea20c3aed306ad0c5 inc/Module/Install/Include.pm
+SHA1 176d68fe7c07b6ab7cfe09093078b8127bbde786 inc/Module/Install/Makefile.pm
+SHA1 8b37b38215d14f922b3d5132ce33d11d21d531ba inc/Module/Install/Metadata.pm
+SHA1 7eb44b00058c44795038d7fa4c0c77470f20a7f8 inc/Module/Install/Win32.pm
+SHA1 6d05967a5e1680b5f118315aaa6b8a1e143d79d8 inc/Module/Install/WriteAll.pm
+SHA1 f0ebc594cf8ba858ee9a840c344d9b7ea2c3c6f4 inc/Test/Builder.pm
+SHA1 a9037004a2c3096d77169a16da95743eeb813539 inc/Test/Builder/Module.pm
+SHA1 07c750f370de7a44ee7b0ed9ec30a7e89c24c9b9 inc/Test/More.pm
+SHA1 e3ccbc21f5ea44e5e64f3d3d19a8850804d5c012 inc/ok.pm
+SHA1 6cbd37765efe58e5c7521674ff6f246210229bb2 lib/Scalar/Defer.pm
+SHA1 2e2580bfac8e43d4ac9ddcb8b15c0b26881c5c8d t/01-basic.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.3 (Darwin)
+
+iD8DBQFEu9RYtLPdNzw1AaARAv6UAJ9EuMBWOWliKrjmL9xXnKIofIxleQCgnsvL
++8Wr3rRxTzWm6xPzzMIZioI=
+=pVXu
+-----END PGP SIGNATURE-----
