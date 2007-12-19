@@ -1,3 +1,9 @@
+[Changes for 0.12 - 2007-12-18]
+
+* Fixed major memory leak caused by defer{} and lazy{}, by cleaning out
+  the local storage when the InsideOut object goes away.
+  Contributed by: Alex Vandiver
+
 [Changes for 0.11 - 2007-11-26]
 
 * Refactored internals for the upcoming (optional) support for

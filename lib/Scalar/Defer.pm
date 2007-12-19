@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 BEGIN {
-    our $VERSION = '0.11';
+    our $VERSION = '0.12';
     our @EXPORT  = qw( lazy defer force );
 }
 
@@ -32,6 +32,10 @@ BEGIN {
             $forced ? $value : scalar(++$forced, $value = &$cv)
         };
         bless($obj => DEFER_PACKAGE);
+    }
+
+    sub DEMOLISH {
+        delete $_defer{ id shift };
     }
 
     use constant SUB_FORCE => sub ($) {
@@ -96,7 +100,8 @@ BEGIN {
             };
         }
 
-        *DESTROY = \&Scalar::Defer::DESTROY;
+        *DESTROY  = \&Scalar::Defer::DESTROY;
+        *DEMOLISH = \&Scalar::Defer::DEMOLISH;
     }
 }
 
@@ -148,7 +153,7 @@ evaluation will simply use the cached result.
 =head2 force $value
 
 Force evaluation of a deferred value to return a normal value.
-If C<$value> was already normal value, then C<force> simply returns it.
+If C<$value> was already a normal value, then C<force> simply returns it.
 
 =head1 NOTES
 
@@ -157,7 +162,7 @@ although you can still call methods on them, in which case the invocant
 is always the forced value.
 
 Unlike the C<tie>-based L<Data::Lazy>, this module operates on I<values>,
-not I<variables>.  Therefore, assigning anothe value into C<$dv> and C<$lv>
+not I<variables>.  Therefore, assigning another value into C<$dv> and C<$lv>
 above will simply replace the value, instead of triggering a C<STORE> method
 call.
 
