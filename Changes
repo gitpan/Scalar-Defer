@@ -1,3 +1,11 @@
+
+[Changes for 0.13 - 2008-01-01]
+
+* New exportable function 'is_deferred'.
+
+* Minor code cleanup: removing unused import
+  and constants.
+
 [Changes for 0.12 - 2007-12-18]
 
 * Fixed major memory leak caused by defer{} and lazy{}, by cleaning out

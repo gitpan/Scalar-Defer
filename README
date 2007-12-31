@@ -33,6 +33,13 @@ DESCRIPTION
     Force evaluation of a deferred value to return a normal value. If $value
     was already a normal value, then "force" simply returns it.
 
+  is_deferred $value
+    Tells whether the argument is a deferred value or not. (Lazy values are
+    deferred too.)
+
+    The "is_deferred" function is not exported by default; to import it,
+    name it explicitly in the import list.
+
 NOTES
     Deferred values are not considered objects ("ref" on them returns 0),
     although you can still call methods on them, in which case the invocant
@@ -50,11 +57,15 @@ NOTES
     forced after creation, this module is still twice as fast than
     Data::Lazy.
 
+CAVEATS
+    Bad things may happen if this module interacts with any other code which
+    fiddles with package 0.
+
 AUTHORS
     Audrey Tang <cpan@audreyt.org>
 
 COPYRIGHT
-    Copyright 2006, 2007 by Audrey Tang <cpan@audreyt.org>.
+    Copyright 2006, 2007, 2008 by Audrey Tang <cpan@audreyt.org>.
 
     This software is released under the MIT license cited below.
 

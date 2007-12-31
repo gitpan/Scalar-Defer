@@ -5,14 +5,14 @@ use strict;
 use warnings;
 
 BEGIN {
-    our $VERSION = '0.12';
+    our $VERSION = '0.13';
     our @EXPORT  = qw( lazy defer force );
+    our @EXPORT_OK = qw( is_deferred );
 }
 
 use Exporter::Lite;
-use Class::InsideOut qw( private register id );
-use constant FALSE_PACKAGE => '0';
-use constant DEFER_PACKAGE => '0';
+use Class::InsideOut qw( register id );
+use constant DEFER_PACKAGE => '0'; # This may change soon
 
 BEGIN {
     my %_defer;
@@ -36,6 +36,11 @@ BEGIN {
 
     sub DEMOLISH {
         delete $_defer{ id shift };
+    }
+
+    sub is_deferred ($) {
+        no warnings 'uninitialized';
+        ref $_[0] eq DEFER_PACKAGE;
     }
 
     use constant SUB_FORCE => sub ($) {
@@ -107,7 +112,7 @@ BEGIN {
 
 BEGIN {
     no strict 'refs';
-    @{FALSE_PACKAGE().'::ISA'} = ('Scalar::Defer::Deferred');
+    @{DEFER_PACKAGE().'::ISA'} = ('Scalar::Defer::Deferred');
 }
 
 1;
@@ -155,6 +160,14 @@ evaluation will simply use the cached result.
 Force evaluation of a deferred value to return a normal value.
 If C<$value> was already a normal value, then C<force> simply returns it.
 
+=head2 is_deferred $value
+
+Tells whether the argument is a deferred value or not. (Lazy values are
+deferred too.)
+
+The C<is_deferred> function is not exported by default; to import it, name
+it explicitly in the import list.
+
 =head1 NOTES
 
 Deferred values are not considered objects (C<ref> on them returns C<0>),
@@ -172,13 +185,18 @@ evaluationg.  This makes it much faster than a C<tie>-based implementation
 -- even under the worst case scenario, where it's always immediately forced
 after creation, this module is still twice as fast than L<Data::Lazy>.
 
+=head1 CAVEATS
+
+Bad things may happen if this module interacts with any other code which
+fiddles with package C<0>.
+
 =head1 AUTHORS
 
 Audrey Tang E<lt>cpan@audreyt.orgE<gt>
 
 =head1 COPYRIGHT
 
-Copyright 2006, 2007 by Audrey Tang <cpan@audreyt.org>.
+Copyright 2006, 2007, 2008 by Audrey Tang <cpan@audreyt.org>.
 
 This software is released under the MIT license cited below.
 

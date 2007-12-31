@@ -21,3 +21,4 @@ META.yml
 README
 SIGNATURE			Public-key signature (added by MakeMaker)
 t/01-basic.t
+t/02-is.t
