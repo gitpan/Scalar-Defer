@@ -14,11 +14,11 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 273c3d0e5fcf31a8081378f4e60c2f5e1b6374fe Changes
+SHA1 dbace35e86d2cd9c43f1579b4a71be33cc8fa175 Changes
 SHA1 b8b33e7c6842a35e19c63c7142be3e5e256da149 MANIFEST
-SHA1 7b2310b3652ebd5c26697923a79ac6126755af9c META.yml
+SHA1 73af285145fcd1a4df58ddc59b89ec3d1c553e51 META.yml
 SHA1 91868dc8231c258af600393393c7fb0362935e85 Makefile.PL
-SHA1 d69cfe56f63f4a7ee1e561c38cfd39067bf2e67f README
+SHA1 91735f73073ea3d7b2d64047e45d25355f516752 README
 SHA1 603bb9de29fb8cba7f13409c546750972eff645d inc/Module/AutoInstall.pm
 SHA1 7e2cfa1b9efe0d502ee57717649c90ba4bd28ba9 inc/Module/Install.pm
 SHA1 182a0df45b65151afdc2be0b7246a2d02d0f0567 inc/Module/Install/AutoInstall.pm
@@ -30,17 +30,17 @@ SHA1 54fcbed19232ec959bb17cfb4410599afc7f0779 inc/Module/Install/Makefile.pm
 SHA1 7d3be9b158e37b2b2c22084740099955623b1d56 inc/Module/Install/Metadata.pm
 SHA1 0a8b66180229ba2f9deaea1fedd0aacf7a7ace6b inc/Module/Install/Win32.pm
 SHA1 d3352eb33fe43a5f3ead513f645224fe34d73bc9 inc/Module/Install/WriteAll.pm
-SHA1 fb711fed1e4269f7569da5d09980648acf47a750 inc/Test/Builder.pm
-SHA1 028954a5cb377df3f660a7ade8631c265df026cc inc/Test/Builder/Module.pm
-SHA1 0781d008b60551d1bd74d56bf065861f4d84cf9d inc/Test/More.pm
+SHA1 98cd56704e09b57d9ba121b45d976c3d09a9f19c inc/Test/Builder.pm
+SHA1 6e95f0ebeb31abc5608a987e88edf2e2427912c4 inc/Test/Builder/Module.pm
+SHA1 1296aa4ac787d6df9f9679d2bae4851ffef63e5a inc/Test/More.pm
 SHA1 55be398173a2d979a648a73a28c8b3a40531dbba inc/ok.pm
-SHA1 af927b5d5c0ba5a5869c76a6b27ff4e7aabbf8d3 lib/Scalar/Defer.pm
+SHA1 b3920fe09164f1d57a49f4663d45c3a7f7161327 lib/Scalar/Defer.pm
 SHA1 a73b56637ebefda31495df2c2e2e5c06d3bfe3f9 t/01-basic.t
 SHA1 2be303573646cd1aee91665c353bce5cb0efd349 t/02-is.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.3 (Darwin)
 
-iD8DBQFHeYFmtLPdNzw1AaARAk7UAJ0ZoOcxMflkG1yGk6OSQYUceuzl/QCfbwcb
-8HM+DekBjuuq3PK1l1XUMVQ=
-=HZCA
+iD8DBQFHg+PvtLPdNzw1AaARAodgAJ45OqeHizZUyoDEQ1QShHhOoFwi1ACfT/V4
+S/qKNx2GmoZdyd/cd4JGrEY=
+=YK2q
 -----END PGP SIGNATURE-----

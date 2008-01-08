@@ -61,6 +61,11 @@ CAVEATS
     Bad things may happen if this module interacts with any other code which
     fiddles with package 0.
 
+SEE ALSO
+    Data::Thunk, which implements "lazy" values that can replace itself upon
+    forcing, leaving a minimal trace of the thunk, with some sneaky XS magic
+    in Data::Swap.
+
 AUTHORS
     Audrey Tang <cpan@audreyt.org>
 

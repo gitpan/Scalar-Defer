@@ -5,8 +5,8 @@ use strict;
 use warnings;
 
 BEGIN {
-    our $VERSION = '0.13';
-    our @EXPORT  = qw( lazy defer force );
+    our $VERSION   = '0.14';
+    our @EXPORT    = qw( lazy defer force );
     our @EXPORT_OK = qw( is_deferred );
 }
 
@@ -18,24 +18,26 @@ BEGIN {
     my %_defer;
 
     sub defer (&) {
-        my $cv = shift;
+        my $cv  = shift;
         my $obj = register( bless(\(my $id) => __PACKAGE__) );
         $_defer{ $id = id $obj } = $cv;
         bless($obj => DEFER_PACKAGE);
     }
 
     sub lazy (&) {
-        my $cv = shift;
-        my ($value, $forced);
+        my $cv  = shift;
         my $obj = register( bless(\(my $id) => __PACKAGE__) );
+
+        my ($value, $forced);
         $_defer{ $id = id $obj } = sub {
             $forced ? $value : scalar(++$forced, $value = &$cv)
         };
-        bless($obj => DEFER_PACKAGE);
+
+        bless $obj => DEFER_PACKAGE;
     }
 
     sub DEMOLISH {
-        delete $_defer{ id shift };
+        delete $_defer{ id $_[0] };
     }
 
     sub is_deferred ($) {
@@ -67,7 +69,10 @@ BEGIN {
                 my $id = $$self;
                 bless($self => DEFER_PACKAGE);
                 $id;
-            }} || die("Cannot locate thunk for memory address: ".id($_[0]))
+            }} or do {
+                return 0 if caller eq 'Class::InsideOut';
+                die sprintf("Cannot locate thunk for memory address: 0x%X", id $_[0]);
+            };
         };
     };
 
@@ -189,6 +194,12 @@ after creation, this module is still twice as fast than L<Data::Lazy>.
 
 Bad things may happen if this module interacts with any other code which
 fiddles with package C<0>.
+
+=head1 SEE ALSO
+
+L<Data::Thunk>, which implements C<lazy> values that can replace itself
+upon forcing, leaving a minimal trace of the thunk, with some sneaky XS
+magic in L<Data::Swap>.
 
 =head1 AUTHORS
 

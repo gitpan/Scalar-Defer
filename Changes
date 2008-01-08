@@ -1,3 +1,9 @@
+[Changes for 0.14 - 2008-01-09]
+
+* Avoid harmless '(in cleanup)' warnings caused by Class::InsideOut's
+  DESTROY method.
+
+* Mention Data::Thunk, a sneakier XS-based implementation of lazy{}.
 
 [Changes for 0.13 - 2008-01-01]
 
