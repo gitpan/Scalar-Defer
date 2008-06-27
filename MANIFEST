@@ -11,7 +11,6 @@ inc/Module/Install/Metadata.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 inc/ok.pm
-inc/PerlIO.pm
 inc/Test/Builder.pm
 inc/Test/Builder/Module.pm
 inc/Test/More.pm
@@ -21,3 +20,5 @@ MANIFEST			This list of files
 META.yml
 README
 t/01-basic.t
+t/02-is.t
+SIGNATURE                                Public-key signature (added by MakeMaker)
