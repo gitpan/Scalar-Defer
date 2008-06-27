@@ -1,22 +1,15 @@
-[Changes for 0.14 - 2008-01-09]
+[Changes for 0.13 - 2008-06-27]
 
-* Avoid harmless '(in cleanup)' warnings caused by Class::InsideOut's
-  DESTROY method.
+* Fix infinite recursion on UNIVERSAL methods used as class methods on
+  Scalar::Defer::Deferred itself
+  http://rt.cpan.org/Public/Bug/Display.html?id=37153
 
-* Mention Data::Thunk, a sneakier XS-based implementation of lazy{}.
-
-[Changes for 0.13 - 2008-01-01]
-
-* New exportable function 'is_deferred'.
-
-* Minor code cleanup: removing unused import
-  and constants.
 
 [Changes for 0.12 - 2007-12-18]
 
-* Fixed major memory leak caused by defer{} and lazy{}, by cleaning out
-  the local storage when the InsideOut object goes away.
-  Contributed by: Alex Vandiver
+* Clean out the local storage when the InsideOut object goes away.
+  Otherwise you leak memory like a sieve for every defer{} or lazy{}
+  in your code.
 
 [Changes for 0.11 - 2007-11-26]
 
