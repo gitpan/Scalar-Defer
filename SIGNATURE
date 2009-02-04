@@ -14,7 +14,7 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 2a12626473cf3e59311654a64a92cef9eae0ea39 Changes
+SHA1 bdb53e20257992d1e003e8ad2719d040cce28cda Changes
 SHA1 87b74bef193c4e1cfdd4ee6e3f97c0e786132519 MANIFEST
 SHA1 f3bb94ba27910b3bf84dd66443372cc5c4c45b50 META.yml
 SHA1 eef5a6f2e6bc9efe02c137b050c64ba1bd438eab Makefile.PL
@@ -35,14 +35,14 @@ SHA1 277a6e23761120cf71b7f77377e9770ce8df01e5 inc/Test/Builder.pm
 SHA1 e7b7c09a0f71c2ddf5f08ccc859f75acf5df751a inc/Test/Builder/Module.pm
 SHA1 643f63b9d5ab3326cf2421436ca1f56f63ddc3ce inc/Test/More.pm
 SHA1 55be398173a2d979a648a73a28c8b3a40531dbba inc/ok.pm
-SHA1 8b01bdfdb98879a1c72056f8dcd8802fc72c4547 lib/Scalar/Defer.pm
+SHA1 322ef1e9edd1e308a114c72188410eff42c6d6ab lib/Scalar/Defer.pm
 SHA1 f89e83f7a812e3b8c6afe96bb087d0b8218cbd04 t/01-basic.t
 SHA1 2be303573646cd1aee91665c353bce5cb0efd349 t/02-is.t
 SHA1 c3ea4c2671256fad58804f6a00d8d48f6afc2349 t/03-autoload.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.9 (Darwin)
 
-iEYEARECAAYFAkmJ2q0ACgkQEi9d9xCOQEZq5ACgjKYhsg5x1vUjSe7PZJgH31J/
-sSwAn134GSMkL3eVgcOE6ju/7qAoC57T
-=BDgB
+iEYEARECAAYFAkmJ3FkACgkQEi9d9xCOQEYMkACfZ3C16a9q6aoi7sYCIYkAqohh
+zxkAoLaks2P1gbcPozeg4KoQ8efhpqXY
+=ln4N
 -----END PGP SIGNATURE-----
