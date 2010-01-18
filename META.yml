@@ -2,8 +2,12 @@
 abstract: 'Lazy evaluation in Perl'
 author:
   - 'Audrey Tang <cpan@audreyt.org>'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 0.76'
+generated_by: 'Module::Install version 0.91'
 license: mit
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -16,11 +20,13 @@ no_index:
 provides:
   Scalar::Defer:
     file: lib/Scalar/Defer.pm
-    version: 0.18
+    version: 0.21
   Scalar::Defer::Deferred:
     file: lib/Scalar/Defer.pm
 requires:
   Class::InsideOut: 0
   Exporter::Lite: 0
   perl: 5.6.0
-version: 0.18
+resources:
+  license: http://opensource.org/licenses/mit-license.php
+version: 0.21
