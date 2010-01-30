@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 BEGIN {
-    our $VERSION   = '0.21';
+    our $VERSION   = '0.22';
     our @EXPORT    = qw( lazy defer force );
     our @EXPORT_OK = qw( is_deferred );
 }
@@ -205,6 +205,15 @@ after creation, this module is still twice as fast than L<Data::Lazy>.
 
 Bad things may happen if this module interacts with any other code which
 fiddles with package C<0>.
+
+Performance of creating new deferred or lazy values can be quite poor
+under perl 5.8.9.  This is due a bugfix since 5.8.8, where re-blessing
+an overloaded object caused bad interactions with other references to
+the same value.  5.8.9's solution involves walking the arenas to find
+all other references to the same object, which can cause C<bless> (and
+thus L<Scalar::Defer/defer> to be up to three orders of magnitude
+slower than usual.  perl 5.10.0 and higher do not suffer from this
+problem.
 
 =head1 SEE ALSO
 
